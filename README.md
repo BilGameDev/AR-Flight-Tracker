@@ -1,8 +1,12 @@
 # Flight Tracker — AR Aircraft Browser
 
-<img width="1080" height="2340" alt="Screenshot_20260607_220827_AR Flight Tracker" src="https://github.com/user-attachments/assets/a96b6a53-7501-469d-934c-f8d6c3049ead" />
-<img width="1080" height="2340" alt="Screenshot_20260607_220655_AR Flight Tracker" src="https://github.com/user-attachments/assets/8cd9c58d-53f3-4db8-9e79-a86461edc6ad" />
-<img width="1080" height="2340" alt="Screenshot_20260607_220721_AR Flight Tracker" src="https://github.com/user-attachments/assets/ab6de4c6-1f46-4dd5-889c-02842fc9f21a" />
+<table>
+  <tr>
+    <td><img width="300" alt="Scan view" src="https://github.com/user-attachments/assets/a96b6a53-7501-469d-934c-f8d6c3049ead" /></td>
+    <td><img width="300" alt="Flight details" src="https://github.com/user-attachments/assets/8cd9c58d-53f3-4db8-9e79-a86461edc6ad" /></td>
+    <td><img width="300" alt="Off-screen pointer" src="https://github.com/user-attachments/assets/ab6de4c6-1f46-4dd5-889c-02842fc9f21a" /></td>
+  </tr>
+</table>
 
 An augmented reality app that lets you point your phone at the sky and see all aircraft in that direction projected onto a 3D dome, with flight details and photos.
 
