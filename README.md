@@ -1,5 +1,9 @@
 # Flight Tracker — AR Aircraft Browser
 
+<img width="1080" height="2340" alt="Screenshot_20260607_220827_AR Flight Tracker" src="https://github.com/user-attachments/assets/a96b6a53-7501-469d-934c-f8d6c3049ead" />
+<img width="1080" height="2340" alt="Screenshot_20260607_220655_AR Flight Tracker" src="https://github.com/user-attachments/assets/8cd9c58d-53f3-4db8-9e79-a86461edc6ad" />
+<img width="1080" height="2340" alt="Screenshot_20260607_220721_AR Flight Tracker" src="https://github.com/user-attachments/assets/ab6de4c6-1f46-4dd5-889c-02842fc9f21a" />
+
 An augmented reality app that lets you point your phone at the sky and see all aircraft in that direction projected onto a 3D dome, with flight details and photos.
 
 Built with **Unity 6** • **AR Foundation 6** • **URP** • **OpenSky Network API**
@@ -9,20 +13,7 @@ Built with **Unity 6** • **AR Foundation 6** • **URP** • **OpenSky Network
 ## How it works
 
 1. **Point & Scan** — Aim your phone at the sky and tap SCAN. The app queries OpenSky in the camera's bearing direction.
-2. **Dome projection** — Aircraft positions are projected onto a 30-unit dome around the camera. Altitude maps from horizon (0m) to zenith (12,000m+).
-3. **Tap a plane** — See callsign, origin, altitude, velocity, heading, and coordinates. Previous/Next cycles through visible flights.
-4. **Off-screen arrows** — When a selected plane leaves the viewport, a green arrow points toward it from the screen edge.
-5. **Orbit mode** — Disable AR tracking and swipe to orbit the dome manually.
-6. **Search** — Type a partial callsign (3+ chars) to find flights by prefix.
-
----
-
-## Scenes
-
-| Scene | Purpose |
-|-------|---------|
-| `Bootstrap` | Authenticates with OpenSky (OAuth2), then loads Home |
-| `Home` | Main AR experience — scan, tap, search, details |
+2. **Tap a plane** — See callsign, origin, altitude, velocity, heading, and coordinates. Previous/Next cycles through visible flights.
 
 ---
 
@@ -52,13 +43,6 @@ Set `Use Test Location` in the `FlightTrackerConfig` asset with test lat/lon val
 
 ---
 
-## Architecture
-
-### Core pattern
-- **Services** are registered in `AppContext` (a lightweight service locator in `Viridian.Utils`) on the Bootstrap scene.
-- **Scene components** use `[SerializeField]` with `FindFirstObjectByType` / `AppContext.Get` as fallback.
-- No `_` prefix on private fields.
-
 ### Key scripts
 
 | Script | Responsibility |
@@ -76,13 +60,6 @@ Set `Use Test Location` in the `FlightTrackerConfig` asset with test lat/lon val
 | `GeoAnchorService` | Geo origin for real-world → Unity coordinate conversion |
 | `AircraftMovementSimulator` | Smooths position/heading between API updates |
 | `FlightDataCache` | Caches states by ICAO24 |
-
-### UI popups
-
-| Popup | extends | Use |
-|-------|---------|-----|
-| `FlightDetailsUIPopup` | `SlideUpPopup` | Flight info + Next/Prev cycle |
-| `FlightSearchUIPopup` | `SlideUpPopup` | Prefix search with live results |
 
 ### Data flow
 ```
@@ -102,7 +79,6 @@ Scan button → bearing from Camera.main.forward
 | Input | Action |
 |-------|--------|
 | Tap aircraft | Select + show details |
-| Tap empty (not on UI) | Nothing (selection cleared on popup close) |
 | SCAN button | Query OpenSky in camera direction |
 | SEARCH button | Open prefix search popup |
 | Camera toggle | Enable/disable AR camera background |
@@ -121,8 +97,5 @@ Scan button → bearing from Camera.main.forward
 
 ## Tech notes
 
-- Dependencies found via `AppContext` or `FindFirstObjectByType` — no tight coupling.
-- `FlightPointer` generates its own Canvas + arrow at runtime if no inspector references are assigned.
-- `SlideUpPopup` uses LitMotion for animated open/close.
+- `SlideUpPopup` uses LitMotion Tweens for animated open/close.
 - All aircraft rendered with GPU instancing (`Graphics.DrawMeshInstanced`) for performance.
-- Selection highlight draws as a separate scaled-up mesh in `selectedColor` outside the instanced batch.
