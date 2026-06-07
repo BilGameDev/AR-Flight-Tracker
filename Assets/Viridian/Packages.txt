@@ -1,0 +1,2 @@
+Material - https://github.com/convalise/unity-material-symbols.git?path=/src/UnityMaterialSymbols/Assets/MaterialSymbols
+Lottie - https://github.com/gilzoide/unity-lottie-player.git#1.1.1

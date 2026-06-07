@@ -1,0 +1,14 @@
+﻿<Solution>
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="LitMotion.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="LitMotion.Tests.Runtime.csproj" />
+  <Project Path="Viridian.Utils.csproj" />
+  <Project Path="LitMotion.Editor.csproj" />
+  <Project Path="FlightTracker.csproj" />
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
+  <Project Path="LitMotion.Extensions.csproj" />
+  <Project Path="LitMotion.Tests.Editor.csproj" />
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
+  <Project Path="LitMotion.Tests.Benchmark.csproj" />
+</Solution>
