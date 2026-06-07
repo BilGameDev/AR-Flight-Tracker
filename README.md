@@ -1,4 +1,4 @@
-# Flight Tracker — AR Aircraft Browser
+# AR Flight Tracker
 
 <table>
   <tr>
@@ -8,7 +8,7 @@
   </tr>
 </table>
 
-An augmented reality app that lets you point your phone at the sky and see all aircraft in that direction projected onto a 3D dome, with flight details and photos.
+An augmented reality app that lets you point your phone at the sky and see all aircraft in that direction with flight details.
 
 Built with **Unity 6** • **AR Foundation 6** • **URP** • **OpenSky Network API**
 
